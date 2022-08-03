@@ -1,0 +1,21 @@
+#home {
+    background-color: #E4E9FD;
+    background-image: -webkit-linear-gradient(65deg, #A683E3 50%, #E4E9FD 50%);
+    min-height:900px;
+    font-family: 'helvetica neue';
+  }
+
+  h1 {
+    padding-top: 100px;
+    font-size: 5rem;
+    font-weight: 900;
+  }
+  h2 {
+    padding-top: 20px;
+    width: 28%;
+    margin: 0 auto 0 auto;
+  }
+  .home-btn {
+   margin-left: 600px;
+    background-color: red;
+  }

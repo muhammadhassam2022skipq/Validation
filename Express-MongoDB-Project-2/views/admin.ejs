@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<%- include ("includes/header.ejs") %>
+  <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body>
+    <%- include ("includes/navbar.ejs") %>
+      <section id="home">
+        <h1 class="text-center pt-10">Admin Dash Board</h1>
+        <a class="btn btn-success btn-lg mb-3" href="/listproducts/update" role="button">Update</a>
+        <a class="btn btn-danger btn-lg mb-3" href="/listproducts/delete" role="button">Delete</a>
+        <a class="btn btn-success btn-lg mb-3" href="/addproducts" role="button">Add Another Product</a>
+      </section>
+
+      <%- include ("includes/footer.ejs") %>
+        <%- include ("includes/end.ejs") %>

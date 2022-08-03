@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">myStore</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <% if (isAuthenticated && Admin) { %>
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    <a class="nav-link" href="/admin">Admin</a>
+                    <a class="nav-link" href="/addproducts">Add Products</a>
+                    <a class="nav-link" href="/listproducts">List Products</a>
+                    <a class="nav-link" href="/signout">Sign Out</a>
+                    <% } else if (isAuthenticated && !Admin ) { %>
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        <a class="nav-link" href="/listproducts">List Products</a>
+                        <a class="nav-link" href="/signout">Sign Out</a>
+                        <% } %>
+                            <% if(!isAuthenticated && isAuthenticated === false) { %>
+                                <a class="nav-link active" aria-current="page" href="/">Home</a>
+                                <a class="nav-link" href="/signup">Sign Up</a>
+                                <a class="nav-link" href="/signin">Sign In</a>
+                                <% } %>
+
+            </div>
+        </div>
+    </div>
+</nav>
