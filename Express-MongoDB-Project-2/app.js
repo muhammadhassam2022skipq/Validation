@@ -18,7 +18,7 @@ const signUPModel = require("./model/signUPModel");
 
 
 const store = new MongoDBStore({
-  uri: 'mongodb://localhost:27017/store-sessions',
+  uri: 'mongodb://cmdlhrltx03:27017/store-sessions',
   collection: 'sessions'
 });
 
@@ -40,6 +40,26 @@ app.use(
 
 //giving the location of static files
 app.use(express.static(__dirname + "/public"));
+
+signUPModel.findById({ _id: "62eb970657cb4b3cefc26969" }).then(admin => {
+  if (!admin) {
+    bcrypt.hash("hello", 10).then(hash => {
+      const signUP = new signUPModel({
+        _id: mongoose.Types.ObjectId(),
+        firstName: "Muhammad",
+        lastName: "Hassam",
+        email: "admin124@gmail.com",
+        password: hash,
+        userType: "Admin"
+      });
+      signUP.save();
+    });
+  }
+  else {
+    console.log("The admin is in data base")
+  }
+})
+
 
 // loading error page
 
@@ -67,10 +87,10 @@ app.use((req, res, next) => {
 
 //mongodb://cmdlhrltx03:27017/hassamDB
 // Connecting with mongoDB server and then Listening to the port
-mongoose.connect('mongodb://localhost:27017/hassamDB').then((req, res) => {
+mongoose.connect('mongodb://cmdlhrltx03/hassamDB').then((req, res) => {
 
   app.listen(4000, () => {
-    signUPModel.findOne({_id: "62ea82960f0f4239b2e4cec8"}).then( ()=> {
+    signUPModel.findOne({ _id: "62eb970657cb4b3cefc26969" }).then(() => {
       console.log("connected to the port 4000");
     }).catch(err => {
       console.log("Failed to connect to the server as admin does not exists");
