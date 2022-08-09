@@ -16,6 +16,9 @@
     margin: 0 auto 0 auto;
   }
   .home-btn {
-   margin-left: 600px;
     background-color: red;
+  }
+  .forgetpassword {
+  font-size: 1.2rem;
+   padding: 10px;
   }

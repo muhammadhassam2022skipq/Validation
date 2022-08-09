@@ -11,6 +11,19 @@
       <div class="container">
           <div class="row">
             <div class="col-md-6 mx-auto">
+              <% if((validationErrors?.length ?? 0) > 0) { %>
+                <div class="row">
+                  <p>
+                    <ul>
+                        <% for(let error of validationErrors) { %>
+                            <li style="border: 2px solid red;">
+                              <%= error.msg %>
+                            </li>
+                        <% } %>
+                    </ul>
+                  </p>
+                </div>
+                <% } %>
               <form action="/signin" method="post" class="form-signin">
                 <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
 
@@ -23,7 +36,7 @@
                   <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
                 </p>
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Sign In</button>
-              <a href="/forgetpassword">forget password</a>
+              <a href="/forgetpassword" class= "forgetpassword" style="color: black;">forget password</a>
               </form>
             </div>
           </div>

@@ -24,10 +24,6 @@ const customerSchema = Schema({
         type: String,
         required: true,
     },
-    userType: {
-        type: String,
-        required: true,
-    }
 });
 
 module.exports = mongoose.model('Customer', customerSchema);

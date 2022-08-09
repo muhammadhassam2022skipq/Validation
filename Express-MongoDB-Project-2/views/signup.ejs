@@ -16,7 +16,7 @@
                     <p>
                       <ul>
                           <% for(let error of validationErrors) { %>
-                              <li>
+                              <li  style="border: 2px solid red;">
                                 <%= error.msg %>
                               </li>
                           <% } %>
@@ -24,12 +24,11 @@
                     </p>
                   </div>
                   <% } %>
-
-                <form action="/signup" method="post" class="form-signin">
+                <form action="/signup" method="post" class="form-signin" novalidate="novalidate">
                   <h1 class="h3 mb-3 font-weight-normal">Please sign up</h1>
                   <label for="firstName" class="sr-only">First name</label>
                   <p>
-                    <input type="text" id="firstName" name="firstName" class="form-control" placeholder="First name" required autofocus>
+                    <input type="text" id="firstName" name="firstName" class="form-control" placeholder="First name" autofocus>
                   </p>
                   <label for="lastName" class="sr-only">Last name</label>
                   <p>
@@ -39,13 +38,10 @@
                   <p>
                     <input type="email" id="email" name="email" class="form-control" placeholder="Email address" required autofocus>
                   </p>
+                 
                   <label for="password" class="sr-only">Password</label>
                   <p>
                     <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
-                  </p>
-                  <label for="password" class="sr-only">Password</label>
-                  <p>
-                    <input type="text" id="userType" name="userType" class="form-control" placeholder="type admin or basic" required>
                   </p>
                   <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
                 </form>
